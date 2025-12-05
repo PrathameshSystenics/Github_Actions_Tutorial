@@ -25,9 +25,8 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Display contents of the repository
-        run: ls
+        with:
+          path: backend
 
       - name: Install dependencies
         run: |

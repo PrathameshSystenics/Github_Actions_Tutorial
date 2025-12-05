@@ -11,7 +11,7 @@ jobs: # Group of jobs to be executed as part of the workflow
               uses: actions/setup-node@v4 # This step uses the actions/setup-node action to set up a Node.js environment.
               with: # specify the version of Node.js to use
                   node-version: '20'
-            - run: npm install -g bats # The Run keyword tells the job to execute a command on the runner. 
+            - run: yarn install -g vite # The Run keyword tells the job to execute a command on the runner. 
             - run: echo "Hello, World!" # This step runs a command to print "Hello, World!" to the console.
 
   

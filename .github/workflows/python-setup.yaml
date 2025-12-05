@@ -15,6 +15,11 @@ jobs:
         python-version: ["3.9", "3.10"]
     name: Install Python
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          path: backend
+
       - name: Set up Python 3.9
         uses: actions/setup-python@v5
         with:
@@ -22,11 +27,6 @@ jobs:
 
       - name: Verify Python version
         run: python --version
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          path: backend
 
       - name: Install dependencies
         run: |

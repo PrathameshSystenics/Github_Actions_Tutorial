@@ -1,0 +1,17 @@
+name: Workflow Tutorial # Name of the workflow
+run-name: ${{ github.actor }} is running the Workflow Tutorial # The name for workflow runs generated from the workflow, 
+on: [push] # trigger the workflow on push event
+jobs: # Group of jobs to be executed as part of the workflow
+    Say-Hello: # Define a job named
+        runs-on: ubuntu-22.04 # configure the job to run these means job will execute on fresh runner
+        steps: # Groups together all the steps in the job
+            - name: Check Out repository code
+              uses: actions/checkout@v5 # This step uses the actions/checkout actions with run v4. 
+            - name: Set up Node.js environment
+              uses: actions/setup-node@v4 # This step uses the actions/setup-node action to set up a Node.js environment.
+              with: # specify the version of Node.js to use
+                  node-version: '20'
+            - run: npm install -g vite # The Run keyword tells the job to execute a command on the runner. 
+            - run: echo "Hello, World!" # This step runs a command to print "Hello, World!" to the console.
+
+  

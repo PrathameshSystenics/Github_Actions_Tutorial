@@ -26,6 +26,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Display contents of the repository
+        run: ls
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
